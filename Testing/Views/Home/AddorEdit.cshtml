@@ -1,0 +1,138 @@
+﻿@model Testing.Models.Employee1
+@{
+    ViewBag.Title = "AddorEdit";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+
+<h2>AddorEdit</h2>
+
+@using (Html.BeginForm("AddorEdit", "Home", FormMethod.Post, new { onsubmit = "return SubmitForm(this)" }))
+
+{
+
+    <div class="form-group"> 
+
+        @Html.LabelFor(model => model.Sno, htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10" id="Sno" name="Sno" required>
+
+            @Html.EditorFor(model => model.Sno, new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.ValidationMessageFor(model => model.Sno, "", new { @class = "text-danger" })
+
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        @Html.LabelFor(model => model.Firstname, htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10" id="Firstname" name="Firstname" required>
+
+            @Html.EditorFor(model => model.Firstname, new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "text-danger" })
+
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        @Html.LabelFor(model => model.Lastname, htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10" id="Lastname" name="Lastname" required>
+
+            @Html.EditorFor(model => model.Lastname, new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger" })
+
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        @Html.LabelFor(model => model.DateOfBirth, htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10" id="DateOfBirth" name="DateOfBirth" required>
+
+            @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
+
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10" id="Age" name="Age" required>
+
+            @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10" id="Gender" name="Gender" required>
+
+            @Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        @Html.LabelFor(model => model.Mobile, htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10" id="Mobile" name="Mobile" required>
+
+            @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+
+        </div>
+
+    </div>
+    <div class="form-group">
+
+        <input type="submit" value="submit" class="btn btn-primary" />
+
+        <input type="reset" value="Reste" class="btn btn-warning" />
+
+    </div>
+
+}
+
+<div>
+
+    @Html.ActionLink("Back to List", "Index")
+
+</div>
+
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
+    </body>
+</html>
